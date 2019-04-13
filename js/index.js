@@ -37,19 +37,38 @@ const siteContent = {
   },
 };
 
-// Elements
+// Nav Elements
 const logo = document.getElementById("logo-img");
 const navLink = document.querySelectorAll("header nav a")
+
+// Call To Action Elements
 const dia = document.querySelector(".cta-text h1")
 const button = document.querySelector(".cta-text button")
 const ctaElementImg = document.querySelector("#cta-img")
+
+// Main Content Elements
 const topH4 = document.querySelectorAll(".main-content .top-content div h4") 
 const topP = document.querySelectorAll(".main-content .top-content .text-content p")
+
+// Middle Image
 const middleElementImg = document.getElementById("middle-img")
 
+// Bottom Content Elements
+const bottomH4 = document.querySelectorAll(".main-content .bottom-content div h4") 
+const bottomP = document.querySelectorAll(".main-content .bottom-content .text-content p")
 
+// Contact Elements
+const h4Contact = document.querySelector(".contact h4")
+const pContact = document.querySelectorAll(".contact p")
 
+// Footer Elements
+const pFooter = document.querySelector("footer p")
 
+// Append Anchor
+const appendFAQ = document.createElement("a")
+
+// Prepend Anchor
+const prependBlog = document.createElement("a")
 
 
 
@@ -72,7 +91,7 @@ ctaElementImg.setAttribute("src", siteContent["cta"]["img-src"])
 
 // Add h4 Text in Main Content
 topH4[0].innerText = siteContent["main-content"]["features-h4"]
-topH4[1].innerText = siteContent["main-content"]["product-h4"]
+topH4[1].innerText = siteContent["main-content"]["about-h4"]
 
 // Add p Text in Main Content
 topP[0].innerText = siteContent["main-content"]["features-content"]
@@ -81,15 +100,37 @@ topP[1].innerText = siteContent["main-content"]["product-content"]
 // Add Middle img
 middleElementImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
+// Add h4 Text in Bottom Content
+bottomH4[0].innerText = siteContent["main-content"]["services-h4"]
+bottomH4[1].innerText = siteContent["main-content"]["product-h4"]
+bottomH4[2].innerText = siteContent["main-content"]["vision-h4"]
 
-/*
- oh shit! it shares terminals too
+// Add p Text in Bottom Content
+bottomP[0].innerText = siteContent["main-content"]["services-content"]
+bottomP[1].innerText = siteContent["main-content"]["product-content"]
+bottomP[2].innerText = siteContent["main-content"]["vision-content"]
 
-yeahh and im trying to install a browser plugin
-that terminal shit is really cool though. i also really like that we don't have to stop and wait for the oteer person to finsish typing
-same
+// Add h4 Text in Contact Section
+h4Contact.innerText = siteContent["contact"]["contact-h4"]
 
-all right dude, im gonna sync to github and head to work, fuck the job gonna set up the environment in the office LOL
-be back online in a couple hours, like 2yep yep
-lmao, aight, see ya soon dude peace
-*/
+// Add p Text in Contact Section
+pContact[0].innerText = siteContent["contact"]["address"]
+pContact[1].innerText = siteContent["contact"]["phone"]
+pContact[2].innerText = siteContent["contact"]["email"]
+
+// Add p Text in Footer
+pFooter.innerText = siteContent["footer"]["copyright"]
+
+// Change color of nav text to green
+navLink.forEach( link => link.style.color = 'green')
+
+// Utilize .appendChild() and .prepend() to add two new items to the navigation system. You can call them whatever you want
+
+appendFAQ.innerText = 'FAQ'
+appendFAQ.style.color = 'green'
+document.querySelector("nav").appendChild(appendFAQ)
+
+
+prependBlog.innerText = 'Blog'
+prependBlog.style.color = 'green'
+document.querySelector("nav").prepend(prependBlog)
